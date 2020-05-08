@@ -4,8 +4,8 @@ TekhneeAppointments is an extensive fork of [EasyAppointments](https://github.co
 
 ## Fork features
 
-- **Locale-specific services.** Services may now be targeted to specific locales ([watch video](#internationalizing-service-names-and-descriptions)).
 - **Seamless 24hr schedule**, allowing appointments to cross over, past midnight, into the following date (see [screenshots](#screenshots)).
+- **Locale-specific services.** Services may now be targeted to specific locales ([watch video](#internationalizing-service-names-and-descriptions)).
 - **Time-zone** support on frontend (booking), backend (admin), and in notification emails (see [screenshots](#step-2)).
 - **Official time-zone designations** from the Unicode [CLDR-data](https://github.com/unicode-org/cldr) repository.
 - **Multilingual time-zone selector**, searchable by city and country, in both English and the user's language.
@@ -16,13 +16,13 @@ TekhneeAppointments is an extensive fork of [EasyAppointments](https://github.co
 - Automatic locale detection based on browser settings.
 - Dates, times, and time-zones in the language and format of the locale (see [screenshots](#step-2)).
 - Workflow optimizations for speedy appointment creation on the backend (see [screenshots](#backend)).
-- Streamlined booking process (one step less).
+- Streamlined booking process (shorter by one step).
 - Abbreviated booking form, sacrificing the address, city, and ZIP code fields for real-estate savings and smaller privacy footprint.
 
 ## Additional tweaks
 
 - Optionally hide service descriptions from the front page (`&mini=true` URL parameter).
-- Optionally skip over the service selection step, landing straight in the date-time selection step (`&proceed=true` URL parameter). (Serving suggestion: `&proceed=true&service=N` to direct clients directly to the calendar for service _N_).
+- Optionally skip over the service selection step, landing straight in the date-time selection step (`&proceed=true` URL parameter). (Serving suggestion: `&proceed=true&service=N` will direct clients straight to the calendar for service _N_).
 - Booking view embeddable as `<iframe />`.
 - Service descriptions of arbitrary length, suitable for academic and other complex services.
 - HTML sanitization via [HTML Purifier](http://htmlpurifier.org/).
@@ -114,11 +114,11 @@ Run `$ gulp --tasks` for a complete list of available build scripts.
 
 ### Updating dependencies
 
-`$ npm update` updates JavaScript dependencies (including CLDR data).
+`$ npm update` for JavaScript dependencies (including CLDR data).
 
-`$ composer update` updates PHP dependencies.
+`$ composer update` for PHP dependencies.
 
-`$ gulp dependencies` must be run manually after each dependency update; the script injects all relevant dependencies into the application source tree (`/src`).
+`$ gulp dependencies` must be run manually afterwards in any case; this will 'massage' and inject all relevant dependency components into the application source tree (`/src`).
 
 
 ### Preflight
@@ -139,7 +139,7 @@ If you are transferring an existing EasyAppointments database to TekhneeAppointm
 
 ## API documentation
 
-TekhneeAppointments extends the upstream REST API but, due to lack of development resources, changes are documented only in code commentary. To prevent confusion, the documentation generator of the upstream channel has been removed from the fork. Pull requests by meticulous documentation writers are warmly welcome. Most API extensions pertain to the handling of timezones and timestamps, and are easily inferrable.
+TekhneeAppointments extends the upstream REST API but, due to lack of development resources, changes are documented only in code commentary. To prevent confusion, the documentation generator of the upstream channel has been removed from the fork.
 
 ## Theming
 

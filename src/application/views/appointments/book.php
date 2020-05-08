@@ -345,8 +345,6 @@
 				<!-- FRAME FOOTER -->
 
 				<div id="frame-footer">
-					<a href="https://github.com/tekhnee/appointments/" target="_blank" style="color: #666666; font-size: 90%;">TekhneeAppointments</a>
-					|
 					<span id="select-language" class="label label-success">
 						<?= $this->config->item('available_languages')[$this->config->item('language')][2] ?>
 					</span>
@@ -354,76 +352,78 @@
 						<?= $this->session->user_id ? ' ' : ' ' ?>
 					</a>
 					<div class="attributions-footer">
-						<a href="https://github.com/tekhnee/appointments">TekhneeAppointments</a>&mdash;a fork of <a href="http://easyappointments.org/">Easy!Appointments</a>
+						<a href="https://github.com/tekhnee/appointments">TekhneeAppointments <?= $this->config->item('version') ?></a>&mdash;a fork of <a href="http://easyappointments.org/" style="color: #666666;">Easy!Appointments</a>
+					</div>
+					<div class="attributions-footer">
+						<a href="https://m.tekhn.ee/privacy" target="_blank" style="color: #666666;"><?= lang('privacy_policy') ?> </a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<?php if ($display_cookie_notice === '1') : ?>
-		<?php require 'cookie_notice_modal.php' ?>
-	<?php endif ?>
+		<?php if ($display_cookie_notice === '1') : ?>
+			<?php require 'cookie_notice_modal.php' ?>
+		<?php endif ?>
 
-	<?php if ($display_terms_and_conditions === '1') : ?>
-		<?php require 'terms_and_conditions_modal.php' ?>
-	<?php endif ?>
+		<?php if ($display_terms_and_conditions === '1') : ?>
+			<?php require 'terms_and_conditions_modal.php' ?>
+		<?php endif ?>
 
-	<?php if ($display_privacy_policy === '1') : ?>
-		<?php require 'privacy_policy_modal.php' ?>
-	<?php endif ?>
+		<?php if ($display_privacy_policy === '1') : ?>
+			<?php require 'privacy_policy_modal.php' ?>
+		<?php endif ?>
 
-	<script>
-		var GlobalVariables = {
-			availableServices: <?= json_encode($available_services) ?>,
-			availableProviders: <?= json_encode($available_providers) ?>,
-			baseUrl: <?= json_encode(config('base_url')) ?>,
-			manageMode: <?= $manage_mode ? 'true' : 'false' ?>,
-			customerToken: <?= json_encode($customer_token) ?>,
-			dateFormat: <?= json_encode($date_format) ?>,
-			timeFormat: <?= json_encode($time_format) ?>,
-			displayCookieNotice: <?= json_encode($display_cookie_notice === '1') ?>,
-			appointmentData: <?= json_encode($appointment_data) ?>,
-			providerData: <?= json_encode($provider_data) ?>,
-			customerData: <?= json_encode($customer_data) ?>,
-			displayAnyProvider: <?= json_encode($display_any_provider) ?>,
-			csrfToken: <?= json_encode($this->security->get_csrf_hash()) ?>,
-			timezone: '',
-			isActiveDate: Array(31).fill(false),
-			availableLanguages: <?= json_encode($this->config->item('available_languages')) ?>,
-			language: <?= json_encode($this->config->item('language')) ?>,
-			server_timezone: 'UTC'
-		};
-		var EALang = <?= json_encode($this->lang->language) ?>;
-	</script>
+		<script>
+			var GlobalVariables = {
+				availableServices: <?= json_encode($available_services) ?>,
+				availableProviders: <?= json_encode($available_providers) ?>,
+				baseUrl: <?= json_encode(config('base_url')) ?>,
+				manageMode: <?= $manage_mode ? 'true' : 'false' ?>,
+				customerToken: <?= json_encode($customer_token) ?>,
+				dateFormat: <?= json_encode($date_format) ?>,
+				timeFormat: <?= json_encode($time_format) ?>,
+				displayCookieNotice: <?= json_encode($display_cookie_notice === '1') ?>,
+				appointmentData: <?= json_encode($appointment_data) ?>,
+				providerData: <?= json_encode($provider_data) ?>,
+				customerData: <?= json_encode($customer_data) ?>,
+				displayAnyProvider: <?= json_encode($display_any_provider) ?>,
+				csrfToken: <?= json_encode($this->security->get_csrf_hash()) ?>,
+				timezone: '',
+				isActiveDate: Array(31).fill(false),
+				availableLanguages: <?= json_encode($this->config->item('available_languages')) ?>,
+				language: <?= json_encode($this->config->item('language')) ?>,
+				server_timezone: 'UTC'
+			};
+			var EALang = <?= json_encode($this->lang->language) ?>;
+		</script>
 
-	<script src="<?= asset_url('assets/js/general_functions.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/datejs/date.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/moment/moment-with-locales.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/moment/moment-timezone-with-data-10-year-range.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/jquery/jquery.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/jquery-ui/jquery-ui.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/jquery-qtip/jquery.qtip.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/jquery-loading-overlay/jquery-loading-overlay.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/bootstrap/js/bootstrap.min.js') ?>"></script>
-	<script src="<?= base_url('assets/js/bootstrap_whitelist.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/cookieconsent/cookieconsent.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/select2/select2.min.js') ?>"></script>
-	<script src="<?= asset_url("assets/ext/select2/i18n/{$this->config->item('available_languages')[$this->config->item('language')][5]}.js") ?>"></script>
-	<script src="<?= asset_url('assets/js/frontend_book_api.js') ?>"></script>
-	<script src="<?= asset_url('assets/js/maximizeSelect2Height.min.js') ?>"></script>
-	<script src="<?= asset_url('assets/js/frontend_book.js') ?>"></script>
-	<script src="<?= asset_url('assets/js/timezone_switch.js') ?>"></script>
-	<script src="<?= asset_url('assets/ext/cldrjs-dist/cldr.js') ?>"></script>
+		<script src="<?= asset_url('assets/js/general_functions.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/datejs/date.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/moment/moment-with-locales.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/moment/moment-timezone-with-data-10-year-range.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/jquery/jquery.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/jquery-ui/jquery-ui.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/jquery-qtip/jquery.qtip.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/jquery-loading-overlay/jquery-loading-overlay.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/bootstrap/js/bootstrap.min.js') ?>"></script>
+		<script src="<?= base_url('assets/js/bootstrap_whitelist.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/cookieconsent/cookieconsent.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/select2/select2.min.js') ?>"></script>
+		<script src="<?= asset_url("assets/ext/select2/i18n/{$this->config->item('available_languages')[$this->config->item('language')][5]}.js") ?>"></script>
+		<script src="<?= asset_url('assets/js/frontend_book_api.js') ?>"></script>
+		<script src="<?= asset_url('assets/js/maximizeSelect2Height.min.js') ?>"></script>
+		<script src="<?= asset_url('assets/js/frontend_book.js') ?>"></script>
+		<script src="<?= asset_url('assets/js/timezone_switch.js') ?>"></script>
+		<script src="<?= asset_url('assets/ext/cldrjs-dist/cldr.js') ?>"></script>
 
-	<script>
-		$(document).ready(function() {
-			FrontendBook.initialize(true, GlobalVariables.manageMode);
-			GeneralFunctions.enableLanguageSelection($('#select-language'));
-		});
-	</script>
+		<script>
+			$(document).ready(function() {
+				FrontendBook.initialize(true, GlobalVariables.manageMode);
+				GeneralFunctions.enableLanguageSelection($('#select-language'));
+			});
+		</script>
 
-	<?php google_analytics_script(); ?>
+		<?php google_analytics_script(); ?>
 </body>
 
 </html>
