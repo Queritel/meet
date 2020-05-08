@@ -112,6 +112,15 @@ Run `$ gulp --tasks` for a complete list of available build scripts.
 
 `$ gulp` or `$ gulp default`.
 
+### Updating dependencies
+
+`$ npm update` updates JavaScript dependencies (including CLDR data).
+
+`$ composer update` updates PHP dependencies.
+
+`$ gulp dependencies` must be run manually after each dependency update; the script injects all relevant dependencies into the application source tree (`/src`).
+
+
 ### Preflight
 
 `$ gulp version` to have the version number injected into the user interface of the app.
