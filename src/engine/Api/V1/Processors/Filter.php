@@ -1,0 +1,36 @@
+<?php
+
+/* ----------------------------------------------------------------------------
+ * TekhneeAppointments - Self-hosted appointment-booking system for round-the-clock, timezone-aware, multilingual operations.
+ *
+ * @package     TekhneeAppointments
+ * @author      A.Tselegidis
+ * @author      Tekhnee
+ * @copyright   Copyright (c) 2013 - 2019 Alex Tselegidis
+ * @copyright   Copyright (c) 2019 - 2020 Tekhnee
+ * @license     http://opensource.org/licenses/GPL-3.0 - GPLv3
+ * @link        https://github.com/tekhnee/appointments/
+ * @since       v1.0.0
+ * ---------------------------------------------------------------------------- */
+
+namespace EA\Engine\Api\V1\Processors;
+
+/**
+ * Filter Processor
+ *
+ * This class will handle custom filters upon the response array. In some specific cases it might be
+ * easier to apply some custom filtering in order to get the required results.
+ *
+ * @todo Implement this processor class.
+ */
+class Filter implements ProcessorsInterface {
+    /**
+     * Process Response Array
+     *
+     * @param array &$response The response array to be processed.
+     */
+    public static function process(array &$response)
+    {
+        // Not implemented yet.
+    }
+}

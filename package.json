@@ -1,0 +1,64 @@
+{
+  "name": "tekhneeappointments",
+  "version": "2.2.4",
+  "description": "Self-hosted appointment-booking system for round-the-clock, timezone-aware, multilingual operations. EasyAppointments fork.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tekhnee/appointments.git"
+  },
+  "keywords": [
+    "php",
+    "javascript",
+    "mysql",
+    "html"
+  ],
+  "author": "Tekhnee (forked from A. Tselegidis's Easy!Appointments)",
+  "license": "GPL-3.0",
+  "homepage": "https://meeting.tekhnee.org/",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "cldr-core": ">=36.0.0",
+    "cldr-dates-full": ">=36.0.0",
+    "cldr-localenames-full": ">=36.0.0",
+    "cldr-numbers-full": ">=36.0.0",
+    "cldrjs": "^0.5.1",
+    "cookieconsent": "^3.1.1",
+    "flag-icon-css": "^3.4.6",
+    "flatpickr": "^4.6.3",
+    "fullcalendar": "^3.6.1",
+    "gasparesganga-jquery-loading-overlay": "^2.1.7",
+    "jquery": "^3.5.1",
+    "jquery-jeditable": "^2.0.17",
+    "jquery-mousewheel": "^3.1.13",
+    "jquery-ui": "^1.12.0",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-ui-timepicker-addon": "^1.6.3",
+    "moment": "^2.25.3",
+    "moment-timezone": "^0.5.28",
+    "qtip2": "^3.0.3",
+    "select2": "^4.0.13",
+    "select2-bootstrap-theme": "0.1.0-beta.10",
+    "sticky-table-headers": "^0.1.19",
+    "trumbowyg": "^2.21.0",
+    "tz_mappings": "yrammos/tz_mappings#master"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "done": "^1.1.7",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-gnirts": "^1.0.6",
+    "gulp-header-license": "^1.0.9",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-npm-dist": "^1.0.3",
+    "gulp-remote-src": "^0.4.4",
+    "gulp-rsync": "0.0.8",
+    "gulp-uglify": "^3.0.2",
+    "syncy": "^3.0.0",
+    "gulp-inject-version": "dvinciinteractive/gulp-inject-version#develop"
+  }
+}

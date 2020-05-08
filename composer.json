@@ -1,0 +1,35 @@
+{
+    "name": "tekhnee/appointments",
+    "description": "Self-hosted appointment-booking system for round-the-clock, timezone-aware, multilingual operations. EasyAppointments fork.",
+    "keywords": [
+        "calendar",
+        "scheduler",
+        "appointments",
+        "events",
+        "dates",
+        "google",
+        "services"
+    ],
+    "type": "project",
+    "homepage": "https://meeting.tekhn.ee/",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alex Tselegidis",
+            "email": "alextselegidis@gmail.com"
+		},
+        {
+            "name": "Tekhnee",
+            "email": "info@tekhnee.org"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6",
+        "gregwar/captcha": "^1.1",
+        "phpmailer/phpmailer": "^5.2",
+        "codeigniter/framework": "^3.1.6",
+        "jsvrcek/ics": "^0.5.1",
+		"nesbot/carbon": "^2.28"
+    }
+}
