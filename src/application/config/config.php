@@ -76,17 +76,11 @@ $config['url_suffix'] = '';
 | Available Languages
 |--------------------------------------------------------------------------
 |
-| Element [0] of each item in this array is an ISO language name and
-| must correspond to a subdirectory of `/application/language`,
-| containing translations.
+| Each language is represented by a key-value pair according to the following convention:
 |
-| Element [1] is an ISO639-1 locale abbreviation, for use with i18n-type functions.
-| It must be identical to the corresponding array key.
-|
-| Element [2] is the language endonym.
+| locale_name => [filename, (defunct), display_name, locale_name, flatpickr_name, select2_name]
 |
 */
-// locale_name => [filename, (obsolete), display_name, locale_name, flatpickr_name, select2_name]
 $config['available_languages'] = array (
 	'bg' => ['bulgarian', '', 'Български', 'bg', 'bg', 'bg'],
 	'da' => ['danish', '', 'Dansk', 'da', 'da', 'da'],

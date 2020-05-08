@@ -4,27 +4,28 @@ TekhneeAppointments is an extensive fork of [EasyAppointments](https://github.co
 
 ## Fork features
 
-- **Locale-specific services.** Services may now be targeted to specific locales and remain hidden otherwise ([watch video](#internationalizing-service-names-and-descriptions)).
-- **time-zone** support on frontend (booking), backend (admin), and in notification emails (see [screenshots](#step-2)).
-- **Official time-zone designations** regularly updated via the Unicode [CLDR-data](https://github.com/unicode-org/cldr) repository.
-- Multilingual time-zone selector, searchable both in English and the user's selected language.
-- **Seamless 24hr cycle** allowing appointment durations to cross over, past midnight, into the following date (see [screenshots](#screenshots)).
+- **Locale-specific services.** Services may now be targeted to specific locales ([watch video](#internationalizing-service-names-and-descriptions)).
+- **Seamless 24hr schedule**, allowing appointments to cross over, past midnight, into the following date (see [screenshots](#screenshots)).
+- **Time-zone** support on frontend (booking), backend (admin), and in notification emails (see [screenshots](#step-2)).
+- **Official time-zone designations** from the Unicode [CLDR-data](https://github.com/unicode-org/cldr) repository.
+- **Multilingual time-zone selector**, searchable by city and country, in both English and the user's language.
 - Support for events longer than 24 hours.
-- **Service descriptions in HTML**, including images (see [screenshot](#screenshots)).
+- Infrastructure and support for **dialects** (e.g. 'en-GB').
+- **Rich-text service descriptions in HTML** (see [screenshot](#screenshots)).
 - Multilingual language selector ([watch video](#internationalizing-service-names-and-descriptions)).
 - Automatic locale detection based on browser settings.
-- Dates, times, and time-zones are now automatically displayed in the language and format of the locale on frontend, backend, and in emails (see [screenshots](#step-2)).
+- Dates, times, and time-zones in the language and format of the locale (see [screenshots](#step-2)).
 - Workflow optimizations for speedy appointment creation on the backend (see [screenshots](#backend)).
+- Streamlined booking process (one step less).
+- Abbreviated booking form, sacrificing the address, city, and ZIP code fields for real-estate savings and smaller privacy footprint.
 
 ## Additional tweaks
 
-- Support for a `&mini=` URL parameter, which hides service descriptions from the front page.
-- Support for a `&proceed=` URL parameter, which skips over the service selection step, landing straight in the date-time selection step. This facility will be typically used in conjunction with service-specific URLs (`&service=` parameter).
+- Optionally hide service descriptions from the front page (`&mini=true` URL parameter).
+- Optionally skip over the service selection step, landing straight in the date-time selection step (`&proceed=true` URL parameter). (Serving suggestion: `&proceed=true&service=N` to direct clients directly to the calendar for service _N_).
 - Booking view embeddable as `<iframe />`.
 - Service descriptions of arbitrary length, suitable for academic and other complex services.
 - HTML sanitization via [HTML Purifier](http://htmlpurifier.org/).
-- Streamlined booking process (one step less).
-- Abbreviated booking form, sacrificing the address, city, and ZIP code fields for real-estate savings and smaller privacy footprint.
 - [Select2](https://select2.org/)-based controls.
 - [Flatpickr2](https://flatpickr.js.org)-based date-time picker on the backend, with defaults for speedy appointment entry.
 - Booking form automatically populated with session-stored client data for speedy multiple bookings.
@@ -43,10 +44,10 @@ The fork represents the specific use-case of [the workshop](https://tekhnee.org)
 
 [↑](#main-features)
 
-TekhneeAppointments adopts a simple tagging convention which assigns locales to sevice categories. The following rules apply:
+TekhneeAppointments applies a simple tagging convention for assigning locales to sevice categories:
 
-- Service categories bearing one (or more) tags are visible in the respective locale(s) only.
-- Valid tags adhere to the schema `[locale_code]`.
+- Service categories carrying one (or more) tags are visible in the respective locale(s) only.
+- Valid tags consist of a locale code wrapped in square brackets (e.g. `[pt-BR]`.)
 - Untagged service categories are visible in all locales.
 - Invalid locale codes are interpreted as literal elements of the category name and rendered in the booking form alongside the flanking square brackets.
 
@@ -93,33 +94,35 @@ The following list of codes is comprehensive, culled directly from the `$config[
 ## Installation
 
 1. Clone this repo—or better still fork it, in the likely event that you'd rather add your own logo and particulars. (Kindly note that the GPLv3 license prohibits removal of copyright notices.)
-2. `npm install`
-3. `cp config-sample.php config.php`
-4. `vi config.php` to add your own
-5. `gulp production`
+2. `$ npm install`
+3. `$ cp config-sample.php config.php`
+4. `$ vi config.php` to add your own
+5. `$ gulp production`
 6. [Deploy](#deployment)
 
-In most ways, the procees is identical
+If in trouble, start with the [installation notes](https://github.com/alextselegidis/easyappointments#installation) of the original app, and [submit an issue](https://github.com/tekhnee/appointments/issues) in case of persistent issues.
 
 ## Building
 
 This fork uses a modified `gulp` script for development and deployment. Please note that a Docker container is **no longer available** (pull requests to reinstate it are welcome).
 
-Run `gulp --tasks` for a complete list of available build scripts.
+Run `$ gulp --tasks` for a complete list of available build scripts.
 
 ### Development mode
 
-`$ gulp`
+`$ gulp` or `$ gulp default`.
 
 ### Preflight
 
-`gulp version` to have the version number injected into the user interface of the app.
+`$ gulp version` to have the version number injected into the user interface of the app.
 
-`gulp production` for code compression, version injection, and other housekeeping tasks prior to uploading to your server.
+`$ gulp production` for code compression, version injection, and other housekeeping tasks prior to uploading to your server.
 
 ### Deployment
 
-`deploy` to upload the build (`/dist` directory) to your webserver; having inserted all relevant server data into the `gulpfile.js`.
+Replace all placeholders in `gulpfile.js` with your admin credentials.
+
+`$ gulp deploy` to upload the build (`/dist` directory) onto your webserver.
 
 ## Migrations (database schema updates)
 
