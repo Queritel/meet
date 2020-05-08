@@ -47,22 +47,20 @@ The fork represents the specific use-case of [the workshop](https://tekhnee.org)
 TekhneeAppointments applies a simple tagging convention for assigning locales to sevice categories:
 
 - Service categories carrying one (or more) tags are visible in the respective locale(s) only.
-- Valid tags consist of a locale code wrapped in square brackets (e.g. `[pt-BR]`.)
+- Valid tags consist of a locale code wrapped in square brackets (e.g. `[pt-BR]`).
 - Untagged service categories are visible in all locales.
 - Invalid locale codes are interpreted as literal elements of the category name and rendered in the booking form alongside the flanking square brackets.
 
 ### Examples
 
-|          Category name           |                                                 Visibility                                                 |
-| -------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `[el] Σεμινάρια`                  | Displayed as `Σεμινάρια` in Greek; hidden otherwise.                                                        |
-| `[en-US-POSIX] [en-GB] Seminars` | Displayed as `Seminars` in US Engish and British English; hidden otherwise.                                |
-| `Семинары`                       | Displayed as such in all locales.                                                                          |
-| `[en] Seminars`                  | Invalid tag; category displayed in full, including the square brackets and their contents, in all locales. |
+|          Category name           |                                                 Visibility                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `[el] Σεμινάρια`                  | Displayed as `Σεμινάρια` in Greek; hidden otherwise.                                                                |
+| `[en-US-POSIX] [en-GB] Seminars` | Displayed as `Seminars` in US Engish and British English; hidden otherwise.                                        |
+| `Семинары`                       | Displayed as-is in all locales.                                                                                    |
+| `[en] Seminars`                  | Invalid tag; square brackets and language tag are rendered, in all locales, as literal parts of the category name. |
 
 ### Locale codes
-
-The following list of codes is comprehensive, culled directly from the `$config['available_languages']` array in `./src/application/config/config.php`:
 
 |    Code     |       Language       |
 | ----------- | -------------------- |
@@ -93,7 +91,7 @@ The following list of codes is comprehensive, culled directly from the `$config[
 
 ## Installation
 
-1. Clone this repo—or better still fork it, in the likely event that you'd rather add your own logo and particulars. (Kindly note that the GPLv3 license prohibits removal of copyright notices.)
+1. Clone this repo—or better still fork it, in the likely event that you'd rather add your own logo and particulars. (Kindly note that the GPLv3 license prohibits the removal of copyright notices.)
 2. `$ npm install`
 3. `$ cp config-sample.php config.php`
 4. `$ vi config.php` to add your own
@@ -118,7 +116,7 @@ Run `$ gulp --tasks` for a complete list of available build scripts.
 
 `$ composer update` for PHP dependencies.
 
-`$ gulp dependencies` must be run manually afterwards in any case; this will 'massage' and inject all relevant dependency components into the application source tree (`/src`).
+`$ gulp dependencies` must be run afterwards in any case; this will 'massage' and copy all relevant dependency components into the application source tree (`/src`).
 
 
 ### Preflight
