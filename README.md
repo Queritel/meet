@@ -21,8 +21,9 @@ TekhneeAppointments is an extensive fork of [EasyAppointments](https://github.co
 
 ## Additional tweaks
 
-- Optionally hide service descriptions from the front page (`&mini=true` URL parameter).
-- Optionally skip over the service selection step, landing straight in the date-time selection step (`&proceed=true` URL parameter). (Serving suggestion: `&proceed=true&service=N` will direct clients straight to the calendar for service _N_).
+- Persistent locale selection (via the cookie).
+- Ability to hide service descriptions from the front page (via an optional `&mini=true` URL parameter).
+- Ability to skip over the service selection step, landing straight in the date-time selection step (via an optional `&proceed=true` URL parameter). (Serving suggestion: `&proceed=true&service=N` will direct clients straight to the calendar for service _N_).
 - Booking view embeddable as `<iframe />`.
 - Service descriptions of arbitrary length, suitable for academic and other complex services.
 - HTML sanitization via [HTML Purifier](http://htmlpurifier.org/).
