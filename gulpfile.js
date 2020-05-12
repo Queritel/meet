@@ -34,8 +34,6 @@ gulp.task('dependencies', function(cb) {
 	  {src: './node_modules/select2-bootstrap-theme/dist', dest: './src/assets/ext/select2'},
 	  {src: './node_modules/jquery-jeditable/dist', dest: './src/assets/ext/jquery-jeditable'},
 	  {src: './node_modules/gasparesganga-jquery-loading-overlay/dist', dest: './src/assets/ext/jquery-loading-overlay'},
-	  {src: './node_modules/jquery-mousewheel', dest: './src/assets/ext/jquery-mousewheel'},
-	  {src: './node_modules/sticky-table-headers/js', dest: './src/assets/ext/jquery-sticky-table-headers'},
 	  {src: './node_modules/jquery-ui-timepicker-addon/dist', dest: './src/assets/ext/jquery-ui'},
 	  {src: './node_modules/flag-icon-css/css', dest: './src/assets/css/flag-icon'},
       {src: './node_modules/flag-icon-css/flags', dest: './src/assets/css/flags'},

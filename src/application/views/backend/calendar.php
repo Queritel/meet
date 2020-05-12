@@ -10,7 +10,6 @@
 <script src="<?= asset_url('/assets/ext/moment/moment-timezone-with-data-10-year-range.min.js') ?>"></script>
 <script src="<?= asset_url('/assets/ext/jquery-fullcalendar/fullcalendar.min.js') ?>"></script>
 <script src="<?= base_url('/assets/js/FULLCALENDAR_TEMPFIX.js') ?>"></script>
-<script src="<?= asset_url('/assets/ext/jquery-sticky-table-headers/jquery.stickytableheaders.min.js') ?>"></script>
 <script src="<?= asset_url('/assets/ext/jquery-ui/jquery-ui-timepicker-addon.js') ?>"></script>
 <script src="<?= asset_url('/assets/js/backend_calendar.js') ?>"></script>
 <script src="<?= asset_url('/assets/js/backend_calendar_default_view.js') ?>"></script>
