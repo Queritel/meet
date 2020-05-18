@@ -43,7 +43,7 @@ The fork represents the specific use-case of [the workshop](https://tekhnee.org)
 
 ![Locale-specific services](video.png)
 
-[↑](#main-features)
+[↑](#fork-features)
 
 TekhneeAppointments applies a simple tagging convention for assigning locales to sevice categories:
 
@@ -57,7 +57,7 @@ TekhneeAppointments applies a simple tagging convention for assigning locales to
 |          Category name           |                                                 Visibility                                                         |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `[el] Σεμινάρια`                  | Displayed as `Σεμινάρια` in Greek; hidden otherwise.                                                                |
-| `[en-US-POSIX] [en-GB] Seminars` | Displayed as `Seminars` in US Engish and British English; hidden otherwise.                                        |
+| <code>[en&#x2011;GB]&nbsp;Seminars</code>               | Displayed as `Seminars` in British English; hidden otherwise.                                        |
 | `Семинары`                       | Displayed as-is in all locales.                                                                                    |
 | `[en] Seminars`                  | Invalid tag; square brackets and language tag are rendered, in all locales, as literal parts of the category name. |
 
@@ -95,7 +95,7 @@ TekhneeAppointments applies a simple tagging convention for assigning locales to
 1. Clone this repo—or better still fork it, in the likely event that you'd rather add your own logo and particulars. (Kindly note that the GPLv3 license prohibits the removal of copyright notices.)
 2. `$ npm install`
 3. `$ cp config-sample.php config.php`
-4. `$ vi config.php` to add your own
+4. `$ vi config.php` to fill in all parameter placeholders with your custom values
 5. `$ gulp production`
 6. [Deploy](#deployment)
 
@@ -160,7 +160,7 @@ This fork is a side-project and further development not a priority; pull request
 
 ![Step 1](./screenshot.png)
 
-[↑](#main-features)
+[↑](#fork-features)
 
 ***
 
@@ -168,7 +168,7 @@ This fork is a side-project and further development not a priority; pull request
 
 ![Step 2](./screenshot2.png)
 
-[↑](#main-features)
+[↑](#fork-features)
 
 ***
 
@@ -176,7 +176,7 @@ This fork is a side-project and further development not a priority; pull request
 
 ![Step 3](./screenshot3.png)
 
-[↑](#main-features)
+[↑](#fork-features)
 
 ***
 
@@ -186,10 +186,10 @@ This fork is a side-project and further development not a priority; pull request
 
 ![Backend](./screenshot4.png)
 
-[↑](#main-features)
+[↑](#fork-features)
 
 ## Acknowledgment
 
 Thanks are due to [@alextselegidis](https://github.com/alextselegidis) for building Easy!Appointments, which served as foundation for this project.
 
-[↑](#main-features)
+[↑](#fork-features)
