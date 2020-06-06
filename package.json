@@ -1,6 +1,6 @@
 {
   "name": "tekhneeappointments",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "Self-hosted appointment-booking system for round-the-clock, timezone-aware, multilingual operations. EasyAppointments fork.",
   "repository": {
     "type": "git",
